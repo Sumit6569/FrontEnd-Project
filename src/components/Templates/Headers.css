@@ -1,0 +1,90 @@
+/* Default styles (Desktop and larger screens) */
+.poster-container {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 10%;
+}
+
+/* Small screens (768px and below) */
+@media (max-width: 768px) {
+  .poster-container {
+    height: 40vh; /* Reduce height for smaller screens */
+    padding: 5%; /* Adjust padding to fit smaller screens */
+    background-position: center; /* Recenter the background */
+    background-size: contain; /* Ensure full visibility of the poster */
+  }
+
+  .poster-container h1 {
+    font-size: 1.5rem; /* Adjust title font size */
+    width: 100%; /* Utilize full width */
+  }
+
+  .poster-container p {
+    font-size: 0.9rem; /* Smaller font size for descriptions */
+    width: 100%; /* Utilize full width */
+  }
+
+  .poster-container a {
+    font-size: 0.8rem; /* Adjust button text size */
+    padding: 0.5rem 1rem; /* Make button smaller */
+  }
+}
+
+/* Extra small screens (576px and below) */
+@media (max-width: 576px) {
+  .poster-container {
+    height: 30vh; /* Further reduce the height */
+    padding: 3%; /* Adjust padding */
+    background-position: center; /* Keep the background centered */
+    background-size: contain; /* Keep the image visible */
+  }
+
+  .poster-container h1 {
+    font-size: 1.2rem; /* Smaller font size for title */
+    text-align: center; /* Center-align title */
+  }
+
+  .poster-container p {
+    font-size: 0.8rem; /* Adjust description font size */
+  }
+
+  .poster-container a {
+    font-size: 0.7rem; /* Adjust button font size */
+    padding: 0.4rem 1rem; /* Smaller button size */
+  }
+}
+
+/* Very small screens (below 400px) */
+@media (max-width: 400px) {
+  .poster-container {
+    height: 25vh; /* Keep it even more compact */
+    padding: 1.5%; /* Adjust padding */
+    background-position: center; /* Center the background */
+    background-size: contain; /* Ensure the poster image is visible */
+  }
+
+  .poster-container h1 {
+    font-size: 1.7rem; /* Further reduce font size */
+    position:absolute;
+   
+    margin-left: 1rem;
+
+  }
+
+  .poster-container p {
+    font-size: 0.7rem; /* Further reduce description font size */
+    
+  }
+
+  .poster-container a {
+    font-size: 0.6rem; /* Button text size reduced */
+    padding: 0.3rem 0.8rem; /* Even smaller button */
+  }
+}

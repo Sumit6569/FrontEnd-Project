@@ -1,0 +1,51 @@
+/* Add responsive styles to adjust for small screens */
+@media (max-width: 1024px) {
+  .trending-container {
+    padding-left: 3%; 
+    padding-right: 3%; /* Adjust padding to make room on smaller screens */
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Cards will wrap to next line on smaller screens */
+    justify-content: space-around; /* Centers cards and adjusts spacing */
+  }
+
+  .card {
+    min-width: 45%; /* Each card takes more space on smaller screens */
+    margin: 1rem;
+    height: auto; /* Let the height adjust naturally based on content */
+  }
+
+  .topnav, .dropdown {
+    width: 100%; /* Make the dropdown and nav take full width */
+    margin-bottom: 1rem; /* Space between dropdown and cards */
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-container {
+    padding-left: 2%; 
+    padding-right: 2%; /* Further reduce padding for even smaller screens */
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Each card takes full width */
+    margin-bottom: 1.5rem; /* Ensure spacing between cards */
+  }
+
+  .dropdown {
+    width: 100%; /* Make the dropdown take full width */
+  }
+
+  .topnav {
+    width: 100%; /* TopNav takes full width */
+    margin-bottom: 1rem; /* Space between dropdown and nav */
+  }
+}

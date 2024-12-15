@@ -1,0 +1,83 @@
+/* Reset margin and padding for the body and html to remove any white space */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: auto;
+}
+
+/* For the main container */
+.movie-details-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(https://image.tmdb.org/t/p/original/);
+  background-position: top 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 200vh; /* Ensure it takes up full viewport height */
+  width: 100%;
+  background-color: #1f1e24; /* Default background color */
+  position: relative;
+  padding: 2rem 4% 0; /* For padding adjustment */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add a gradient effect to the bottom */
+.movie-details-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(to top, #1f1e24, transparent);
+}
+
+/* Container for content */
+.movie-details-content {
+  color: white;
+  flex-grow: 1; /* Make content take up remaining space */
+}
+
+/* Poster */
+.movie-details-poster {
+  box-shadow: 8px 17px 38px 2px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Button */
+.movie-details-button {
+  background-color: #6556cd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+/* For smaller screens only (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Main container styling */
+  .movie-details-container {
+    padding: 2rem 2% 0; /* Adjust padding for mobile */
+  }
+
+  /* Content */
+  .movie-details-content {
+    padding: 0 1rem; /* Ensure content is nicely spaced on small screens */
+  }
+
+  /* Poster */
+  .movie-details-poster {
+    width: 80%; /* Make the poster smaller on small screens */
+    margin: 0 auto; /* Center the poster */
+  }
+
+  /* Button */
+  .movie-details-button {
+    padding: 0.8rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font for mobile */
+  }
+}

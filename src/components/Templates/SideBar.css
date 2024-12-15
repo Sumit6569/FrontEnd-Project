@@ -1,0 +1,75 @@
+/* Default styles (desktop and larger screens) */
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  border-right: 2px solid #a8a8a8;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tv-icon-container {
+  display: none; /* Hide the TV icon by default */
+}
+
+.tv-icon {
+  font-size: 2rem; /* Default size for the TV icon */
+  color: #6556CD;
+  margin-bottom: 1rem;
+}
+
+/* Medium screens (1024px - 768px) */
+@media (max-width: 1024px) {
+  .tv-icon-container {
+    display: block; /* Show the TV icon */
+    text-align: center;
+  }
+  .link-text {
+    display: none; /* Hide link text */
+  }
+  .icon {
+    font-size: 1.8rem; /* Adjust other icons size */
+  }
+}
+
+/* Small screens (768px - 576px) */
+@media (max-width: 768px) {
+  .sidebar {
+    justify-content: flex-start;
+    align-items: center; /* Center horizontally */
+  }
+  .tv-icon-container {
+    display: block; /* Ensure the TV icon is visible */
+    margin-bottom: 1rem; /* Space below the icon */
+  }
+  .link-text {
+    display: none; /* Hide link text */
+  }
+  .icon {
+    font-size: 2rem;
+  }
+}
+
+/* Extra small screens (576px - 400px) */
+@media (max-width: 576px) {
+  .tv-icon-container {
+    display: block; /* Ensure the TV icon is always visible */
+    margin-bottom: 3rem;
+  }
+  .tv-icon {
+    font-size: 2.2rem; /* Larger TV icon */
+  }
+}
+
+/* Very small screens (below 400px) */
+@media (max-width: 400px) {
+  .tv-icon-container {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .tv-icon {
+    font-size: 2.9rem; /* Maximum icon size */
+  }
+}

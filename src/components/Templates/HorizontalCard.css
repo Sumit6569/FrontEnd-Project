@@ -1,0 +1,65 @@
+/* Default styles for the card container */
+.horizontal-card-container {
+  display: flex;
+ overflow-x: auto;
+
+  padding: 1rem;
+}
+
+/* Default styles for individual cards */
+.horizontal-card {
+  min-width: 15%;
+  height: 35vh;
+  background-color: #1a1a1a;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.horizontal-card img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+}
+
+.horizontal-card .text-content {
+  padding: 1rem;
+  height: 45%;
+  overflow-y: auto;
+  color: white;
+}
+
+.horizontal-card h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.horizontal-card p {
+  margin-top: 0.5rem;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .horizontal-card {
+    min-width: 45%; /* Cards take up more width on smaller screens */
+    height: 40vh; /* Adjust height */
+  }
+  
+  .horizontal-card img {
+    height: 60%; /* Adjust image height */
+  }
+
+  .horizontal-card h1 {
+    font-size: 1rem; /* Smaller title */
+  }
+
+  .horizontal-card p {
+    font-size: 0.9rem; /* Smaller description text */
+  }
+}
+
+@media (max-width: 576px) {
+  .horizontal-card {
+    min-width: 90%; /* Make cards almost full width */
+    height: 50vh; /* Make cards taller */
+  }
+}

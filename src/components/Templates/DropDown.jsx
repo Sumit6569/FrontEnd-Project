@@ -1,4 +1,5 @@
 import React from "react";
+import "./DropDown.css"; // Import CSS
 
 function DropDown({ title, options, func }) {
   return (
@@ -7,7 +8,6 @@ function DropDown({ title, options, func }) {
         <option value="0" disabled>
           {title}
         </option>
-
         {options.map((o, i) => (
           <option key={i} value={o}>
             {o.toUpperCase()}

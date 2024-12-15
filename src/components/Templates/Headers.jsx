@@ -1,12 +1,12 @@
-import { Wallpaper } from "lucide-react";
 import React, { useState } from "react";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./Headers.css";  // Import the CSS file
 
 function Headers({ data }) {
-   const { pathname } = useLocation();
-   
+  const { pathname } = useLocation();
   console.log(data);
   const { title } = useState(data);
+
   return (
     <div
       style={{
@@ -17,12 +17,12 @@ function Headers({ data }) {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[50vh] flex-col justify-end items-start p-[10%]"
+      className="poster-container" // Apply the CSS class
     >
-      <h1 className="w-[70%] text-5xl font-black text-white mt-10">
+      <h1 className="text-5xl font-black text-white mt-10">
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
-      <p className="w-[70%] mt-3 text-white">
+      <p className="mt-3 text-white">
         {data.overview.slice(0, 200)}...
         <Link
           to={`/${data.media_type}/details/${data.id}`}
@@ -31,22 +31,20 @@ function Headers({ data }) {
           More
         </Link>
       </p>
-      <p className="text-white ">
+      <p className="text-white">
         <i className="text-yellow-500 ri-megaphone-fill"></i>{" "}
         {data.release_date || "No information"}
-        <i className=" ml-5 text-yellow-500  ri-album-fill"></i>{" "}
+        <i className="ml-5 text-yellow-500 ri-album-fill"></i>{" "}
         {data.media_type.toUpperCase()}
       </p>
-
       <Link
         to={`/${data.media_type}/details/${data.id}/trailer`}
         className="absolute mt-30 bg-[#6556CD] p-4 rounded text-white"
       >
-        {" "}
         Watch Trailer
       </Link>
     </div>
   );
 }
- 
+
 export default Headers;

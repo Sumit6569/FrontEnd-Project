@@ -41,7 +41,7 @@ function Home() {
   return walllpaper && trending ? (
     <>
       <SideBar />
-      <div className="w-[80%] h-full  overflow-auto overflow-x-hidden">
+      <div className="w-[80%] h-full  overflow-auto overflow-x-hidden  overflow-y-hidden">
         <TopNav />
         <Headers data={walllpaper} />
         <div className="flex justify-between  p-5">

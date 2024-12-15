@@ -7,6 +7,7 @@ import Axios from "../Utills/Axios";
 import Loading from "./Templates/Loading";
 import Cards from "./Templates/Cards";
 import InfiniteScroll from "react-infinite-scroll-component";
+import "./TrendingSideNav";
 function TrendingSideNav() {
   const navigate = useNavigate();
 
@@ -50,17 +51,17 @@ function TrendingSideNav() {
   }, [category, duration]);
 
   return Trending.length > 0 ? (
-    <div className=" w-screen h-screen">
+    <div className="trending-container w-screen h-screen">
       <div className="px-[5%] w-full flex items-center justify-between ">
-        <h1 className="  text-2xl font-semibold  text-zinc-400 ">
+        <h1 className="text-2xl font-semibold text-zinc-400 ">
           <i
             onClick={() => navigate(-1)}
-            className=" hover:text-[#6556CD]  ri-arrow-left-line"
+            className="hover:text-[#6556CD] ri-arrow-left-line"
           ></i>
           Trending
           <small className="ml-2 text-sm text-zinc-600">({category})</small>
         </h1>
-        <div className="flex items-center  w-[80%]">
+        <div className="flex items-center w-[80%]">
           <TopNav />
           <DropDown
             title="category"
@@ -81,7 +82,9 @@ function TrendingSideNav() {
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Cards data={Trending} title={category} />
+        <div className="card-container">
+          <Cards data={Trending} title={category} />
+        </div>
       </InfiniteScroll>
     </div>
   ) : (
